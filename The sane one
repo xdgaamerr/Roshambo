@@ -1,0 +1,60 @@
+import random
+import time
+
+def the_game():
+    x = input(
+        'Welcome to Roshambo! Choose {1} for rock, {2} for paper or {3} for scissors!: ')
+    if x == '1':
+        x = 'Rock'
+    elif x == '2':
+        x = 'Paper'
+    elif x == '3':
+        x = 'Scissors'
+    else:
+        print("You didn't choose a option, now you have to rerun the code, how you like them apples?")
+
+    list = ['Rock', 'Paper', 'Scissors']
+    z = random.choice(list)
+
+    time.sleep(1)
+    print(f'You drew {x}')
+    time.sleep(1)
+    print(f'CPU drew {z}')
+    time.sleep(1)
+
+    if x == z:
+        print('Tie game!')
+    elif x == 'Rock' and z == 'Scissors':
+        print('YOU WIN!!!')
+    elif x == 'Rock' and z == 'Paper':
+        print('You lost D:!')
+    elif x == 'Paper' and z == 'Rock':
+        print('YOU WIN!!!')
+    elif x == 'Paper' and z == 'Scissors':
+        print('You lost D:!')
+    elif x == 'Scissors' and z == 'Paper':
+        print('YOU WIN!!!')
+    elif x == 'Scissors' and z == 'Rock':
+        print('You lost D:!')
+    else:
+        print("If you got here you broke the code somehow........ so I guess here's a cookie 🍪")
+
+    time.sleep(2)
+
+def prompt():
+    message = input('Would you like to play again? y/n: ')
+    if message == 'y':
+        the_game()
+        prompt()
+    elif message == 'n':
+        time.sleep(0.1)
+    else:
+        print(
+            'So you decided not to choose anything huh?')
+        time.sleep(1)
+        print('D:')
+        time.sleep(5)
+
+
+the_game()
+prompt()
